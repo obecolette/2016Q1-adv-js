@@ -1,5 +1,8 @@
 /* eslint: ignore */
 module.exports = {
+    "ecmaFeatures": {
+        "modules": true
+    },
     "rules": {
         "indent": [
             2,
@@ -20,7 +23,9 @@ module.exports = {
     },
     "env": {
         "es6": true,
-        "browser": true
+        "browser": true,
+        "jasmine": true,
+        "node": true
     },
     "extends": "eslint:recommended"
 };
