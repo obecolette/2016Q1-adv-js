@@ -6,13 +6,19 @@
 // http://stackoverflow.com/questions/1047454/what-is-lexical-scope
 
 let jQuery = this.jQuery ? this.jQuery : {};
+let innerVariable = null;
 
-(function ($) {
+(function ($, inner) {
 
     // jQuery is available here, but so is it's "alias" ($)
+    $.find = {};
+    inner = {
+        something: 'something darkside'
+    };
 
-})(jQuery);
+})(jQuery, innerVariable);
 
 module.exports = {
-    jQuery
+    jQuery,
+    innerVariable
 };

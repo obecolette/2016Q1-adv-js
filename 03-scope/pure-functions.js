@@ -7,26 +7,27 @@ const people = [{
 }];
 
 
-const favoriteFruits = function (fruitChoices) {
+const filterMyFavoriteFruit = function (fruitChoices, favoriteFruit) {
 
     // return only your favorite fruits
     // hint: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
-    let favoriteFruits = fruitChoices.filter(function (fruit) {
-        return fruit !== 'pear';
+    return fruitChoices.filter(function (fruit) {
+        return fruit === favoriteFruit;
     });
-    return favoriteFruits;
 };
 
-const addPeople = function (people) {
+const addPeople = function (people, person) {
 
     // add another person, without modifying the original
-    return people;
+    let newPeople = [].concat(people);
+    newPeople.push(person);
+    return newPeople;
 };
 
 //
 module.exports = {
     fruits,
     people,
-    favoriteFruits,
+    filterMyFavoriteFruit,
     addPeople
 };
