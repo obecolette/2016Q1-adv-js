@@ -6,11 +6,7 @@ const DEFAULT_VIEW_INT = 0;
 
     'use strict';
 
-    // we use Capital letters to denote (ES5) 'Classes' by convention
     const Billboard = function (message) {
-
-        // the lines below define instance properties;
-        // these will be set when a new Animal is created
 
         this.message = message ? message : 'insert message here';  // name is reserved for functions, which `this` is pointing to one such
         this.views = startingViews;
@@ -33,9 +29,6 @@ const DEFAULT_VIEW_INT = 0;
 
     AnimatedBillboard.prototype = Billboard;
 
-    // is Jupe Chris's dog???
-
-
     class Audience {
 
         constructor (name, saturation) {
@@ -49,8 +42,6 @@ const DEFAULT_VIEW_INT = 0;
             return this.saturation;
         }
     }
-
-    // Define a Dog that can bark, and has the same methods and properties of Animal
 
     class TargetAudience extends Audience {
 
@@ -67,10 +58,8 @@ const DEFAULT_VIEW_INT = 0;
 
     const Walmart = new AnimatedBillboard('Save money. Live better.');
 
-    Walmart.flashAd();
-    Walmart.makeImpression();
-
-    // define / declare exports (for testing etc)
+    // Walmart.flashAd();
+    // Walmart.makeImpression();
 
     exports.Billboard = Billboard;
     exports.AnimatedBillboard = AnimatedBillboard;
