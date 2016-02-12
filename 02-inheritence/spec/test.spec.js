@@ -13,3 +13,5 @@ describe('Jasmine', function() {
     });
 
 });
+
+// research more into testing setup

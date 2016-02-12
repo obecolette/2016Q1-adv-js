@@ -26,7 +26,7 @@ describe('Animal', function () {
     it('can eat a food, and gain calories', function () {
 
         this.Hippo.eat({
-            name: 'cake';
+            name: 'cake',
             calories: 100
         });
 

@@ -2,15 +2,15 @@
 
 class Animal {
 
-    constructor (name) {
+    constructor (name, calories) {
         this.name = name;
-        this.calories = 0;
+        this.calories = calories ? calories : 0;
     }
 
     eat (food) {
 
-      this.calories = this.calories + food.calories;
-      return this.calories;
+        this.calories = this.calories + food.calories;
+        return this.calories;
     }
 }
 
@@ -18,8 +18,11 @@ class Animal {
 
 class Dog extends Animal {
 
+    // doesn't like overwriting constructor function
+
+
     bark () {
-      return  'woof';
+        return  'woof';
     }
 }
 

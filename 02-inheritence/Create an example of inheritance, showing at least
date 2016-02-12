@@ -1,0 +1,8 @@
+Create an example of inheritance, showing at least 2 of the patterns we learned (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain).
+
+For example, you could have ManEatingPlant inherit from Plant. ManEatingPlant could consume sunlight and water, but also Mario (or Wario / Luigi / Toadstool / Princess? ) and eat them for 10 seconds, perhaps reducing the humanoid's life value by some number.
+
+This assignment should be complete with tests that show the child object inherited the parent's methods or properties.
+
+Preferably a Github Repo link (submitted here, or directly to me on Slack) or a .zip submission will work.
+
