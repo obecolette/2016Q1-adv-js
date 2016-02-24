@@ -9,6 +9,10 @@ module.exports = (function () {
         const defaultGreeting = 'brave new world';
         let greetingSuffix = name === undefined ? defaultGreeting : name;
 
+        if (typeof name === 'function') {
+            greetingSuffix = name();
+        }
+
         return 'Hello, ' + greetingSuffix + '!';
     };
 
@@ -16,7 +20,8 @@ module.exports = (function () {
 
     const greeting = function (name='brave new world') {
 
-        return 'Hello, ' + name + '!';
+        const result = typeof name === 'function' ? name() : name;
+        return 'Hello, ' + result + '!';
     };
 
 
@@ -32,6 +37,10 @@ module.exports = (function () {
         return numbaOne + numbaTwo;
     };
 
+    const complexSequence = function (noun, pluralNoun = noun + 's', action = 'fire blasters') {
+
+        return [pluralNoun, action].join(' ');
+    };
     // this function is private because we do not export it (via the revealing module pattern below)
 
     const getValueOrDefault = function(currentValue, defaultValue) {
@@ -46,10 +55,13 @@ module.exports = (function () {
     };
 
 
+
+
     return {
         greeting,
         oldGreeting,
-        addTwoNumbers
+        addTwoNumbers,
+        complexSequence
     };
 
 })();

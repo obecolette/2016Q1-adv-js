@@ -11,6 +11,10 @@ module.exports = function () {
         var defaultGreeting = 'brave new world';
         var greetingSuffix = name === undefined ? defaultGreeting : name;
 
+        if (typeof name === 'function') {
+            greetingSuffix = name();
+        }
+
         return 'Hello, ' + greetingSuffix + '!';
     };
 
@@ -20,7 +24,8 @@ module.exports = function () {
         var name = arguments.length <= 0 || arguments[0] === undefined ? 'brave new world' : arguments[0];
 
 
-        return 'Hello, ' + name + '!';
+        var result = typeof name === 'function' ? name() : name;
+        return 'Hello, ' + result + '!';
     };
 
     // do not use named parameters here
@@ -35,6 +40,13 @@ module.exports = function () {
         return numbaOne + numbaTwo;
     };
 
+    var complexSequence = function complexSequence(noun) {
+        var pluralNoun = arguments.length <= 1 || arguments[1] === undefined ? noun + 's' : arguments[1];
+        var action = arguments.length <= 2 || arguments[2] === undefined ? 'fire blasters' : arguments[2];
+
+
+        return [pluralNoun, action].join(' ');
+    };
     // this function is private because we do not export it (via the revealing module pattern below)
 
     var getValueOrDefault = function getValueOrDefault(currentValue, defaultValue) {
@@ -51,6 +63,7 @@ module.exports = function () {
     return {
         greeting: greeting,
         oldGreeting: oldGreeting,
-        addTwoNumbers: addTwoNumbers
+        addTwoNumbers: addTwoNumbers,
+        complexSequence: complexSequence
     };
 }();
